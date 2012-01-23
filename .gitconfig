@@ -1,0 +1,55 @@
+[github]
+	user = max-horvath
+
+[user]
+	name = Max Horvath
+	email = info@maxhorvath.com
+
+[push]
+	default = current
+
+[alias]
+	co = checkout
+	ci = commit
+	st = status
+
+[color]
+	branch = auto
+	diff = auto
+	status = auto
+	interactive = auto
+
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
+
+[merge]
+	tool = opendiff
+
+[core]
+	excludesfile = ~/.gitignore
+	editor = mate -w
+
+[diff]
+	external = ~/.opendiff-git.sh
+
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+
